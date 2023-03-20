@@ -1,13 +1,15 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
-
 function Layout(){
     return(
         <div>
-            <h1>Role Based Authentication app</h1>
-            <Link to="/signin">SignIn</Link>
-            <br/>
-            <Link to="/signup">SignUp</Link>
+            <header>Role Based Authentication app</header>
+            <main>
+                <div>
+                <Link className='link' to="/signin">SignIn</Link>
+                <br/>
+                <Link className='link' to="/signup">SignUp</Link>
+            </div>
+            </main>
         </div>
     );
 }

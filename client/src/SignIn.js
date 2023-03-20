@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 function SignIn(){
     const [data, setData] = useState({});
     const [msg,setmsg]=useState('');
@@ -35,7 +34,9 @@ function SignIn(){
     }
     return(
         <div>
-            <h1>Sign in</h1>
+            <header>Sign in</header>
+            <main>
+                <div>
             <form onSubmit={submit}>
             <label>Email</label>
             <br/>
@@ -44,13 +45,18 @@ function SignIn(){
             <label>Password</label>
             <br/>
             <input type='password' name='password' placeholder="Enter password"  onChange={updateData} required/>
-            <br/>
+            <p>
             <input type='submit' value='submit'/>
+            </p>
             </form>
-            <h1>Don't have an account </h1>
-            <Link to='/signup'>Click to sign up</Link>
+            <p>Don't have an account 
+            <br/>
+            <Link className='text-center' to='/signup'>Click here to sign up</Link>
+            </p>
             <br/>
             <h3>{msg}</h3>
+            </div>
+            </main>
         </div>
     );
 }

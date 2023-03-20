@@ -30,22 +30,33 @@ function Profile(){
     });
     function handleSignOut(){
         localStorage.clear();
-        navigate('/signup', { replace: true });
+        navigate('/signin', { replace: true });
     }
 
     return(
         <div>
         { userExist ? 
         <div>
-        <h1>Profile Page</h1>
+        <header>Profile Page
         <button onClick={handleSignOut}>SignOut</button>
-        <h2>Name</h2>
-        <h3>{name}</h3>
-        <h2>Role</h2>
-        <h3>{role}</h3>
-        <div><Link to='/profile/clerk'>Clerk page</Link></div>
-        <div><Link to='/profile/manager'>Manager Page</Link></div>
-        <div><Link to='/profile/supervisior'>Supervisor page</Link></div>
+        </header>
+        <main>
+            <div>
+        <h2>Name : {name}</h2>
+        <h2>Role : {role}</h2>
+        <ul>
+            <li>
+            <Link to='/profile/clerk'>Clerk page</Link>
+            </li>
+            <li>
+            <Link to='/profile/manager'>Manager Page</Link>
+            </li>
+            <li>
+            <Link to='/profile/supervisior'>Supervisor page</Link>
+            </li>
+        </ul>
+        </div>
+        </main>
         </div>:<h1>Unauthorised Entry</h1>}
         </div>
     );

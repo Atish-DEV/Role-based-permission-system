@@ -35,8 +35,10 @@ function Signup(){
     }
     return(
         <div>
-        <h2>Create an Account</h2>
-        <form onSubmit={submit}>
+        <header>Create an Account</header>
+        <main>
+            <div>
+            <form onSubmit={submit}>
             <label>Email</label>
             <br/>
             <input type='email' name='email' placeholder="Enter email"  onChange={updateData} required/>
@@ -52,17 +54,25 @@ function Signup(){
             <label>Roles</label>
             <br/>
             <input type='radio' value='clerk' name='role'  onChange={updateData} required/>
-            <label for='clerk'>clerk</label>
-            <input type='radio' value='supervisior' name='role'  onChange={updateData} required/>
-            <label for='supervisior'>supervisior</label>
-            <input type='radio' value='manager' name='role'  onChange={updateData} required/>
-            <label for='manager'>manager</label>
+            <label for='clerk'>Clerk</label>
             <br/>
+            <input type='radio' value='supervisior' name='role'  onChange={updateData} required/>
+            <label for='supervisior'>Supervisior</label>
+            <br/>
+            <input type='radio' value='manager' name='role'  onChange={updateData} required/>
+            <label for='manager'>Manager</label>
+            <br/>
+            <p>
             <input type='submit' value='submit'/>
+            </p>
         </form>
         <h2>{msg}</h2>
-        <h2>Already have an account ??</h2>
-        <Link to="/signin">SignIn</Link>
+        <p>Already have an account ??
+            <br/>
+        <Link to="/signin">Click here to sign in</Link>
+        </p>
+            </div>
+        </main>
         </div>
     );
 }
